@@ -1,0 +1,4 @@
+<nav class="topbar">
+    <button [class.active]="activeView === 'list'" (click)="changeView.emit('list')">Liste des cartes</button>
+    <button [class.active]="activeView === 'add'" (click)="changeView.emit('add')">Nouvelle carte</button>
+</nav>

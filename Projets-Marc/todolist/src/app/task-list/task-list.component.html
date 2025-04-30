@@ -1,0 +1,13 @@
+<div class="task-list">
+  <app-task-item 
+    *ngFor="let task of tasks"
+    [task]="task"
+    [viewType]="viewType"
+    (delete)="delete.emit($event)"
+    (toggle)="toggle.emit($event)"
+    (update)="update.emit($event)"
+  ></app-task-item>
+  <div *ngIf="tasks.length === 0" class="empty-state">
+    Aucune tâche à afficher
+  </div>
+</div>

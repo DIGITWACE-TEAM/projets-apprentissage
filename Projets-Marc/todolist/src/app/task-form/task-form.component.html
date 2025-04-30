@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSubmit()" class="task-form">
+  <input 
+    type="text" 
+    [(ngModel)]="taskText" 
+    name="taskText" 
+    placeholder="Ajouter une tâche (6 à 20 caractéres)"
+    minlength="6"
+    maxlength="20"
+  >
+  <button 
+    type="submit" 
+    [disabled]="taskText.length < 6 || taskText.length > 20"
+  >
+    Ajouter
+  </button>
+</form>

@@ -1,0 +1,7 @@
+<nav class="top-bar">
+<div class="h-nav">
+    <button [class.active]="activeView === 'list'" (click)="changeView('list')">All Tasks</button>
+    <button [class.active]="activeView === 'done'" (click)="changeView('done')">Done Tasks</button>
+    <button [class.active]="activeView === 'add'" (click)="changeView('add')">Add Tasks</button>
+</div>
+</nav>

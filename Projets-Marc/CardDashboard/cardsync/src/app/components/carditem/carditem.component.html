@@ -1,0 +1,12 @@
+<div class="card">
+    <h3>{{ card.title }}</h3>
+    <div class="meta">
+        <small>{{ card.creationDate | date:'mediumDate' }}</small>
+      </div>
+    <p class="description">{{ truncateDescription(card.description, 100) }}</p>
+    <div class="actions">
+      <button (click)="onView.emit(card.id)">Lire plus</button>
+      <button (click)="onEdit.emit(card.id)">Éditer</button>
+      <button (click)="onDelete.emit(card.id)">Supprimer</button>
+    </div>
+  </div>

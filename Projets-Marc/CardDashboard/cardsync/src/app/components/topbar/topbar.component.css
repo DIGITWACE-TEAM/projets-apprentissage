@@ -1,0 +1,28 @@
+.topbar {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .topbar button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    color: #333;
+  }
+  
+  .topbar button:hover {
+    background-color: #e9ecef;
+  }
+  
+  .topbar button.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+  }

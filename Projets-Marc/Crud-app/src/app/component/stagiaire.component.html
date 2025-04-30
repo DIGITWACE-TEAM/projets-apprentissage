@@ -1,0 +1,70 @@
+<!-- TEMPLATE -->
+<div class="container">
+  <div class="form-section">
+    <h2>{{ isEditing ? 'Modifier Stagiaire' : 'Nouveau Stagiaire' }}</h2>
+    <form [formGroup]="stagiaireForm" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="id">
+      
+      <div class="form-group">
+        <label>Nom:</label>
+        <input type="text" formControlName="nom" class="form-control">
+        <div class="error-message" *ngIf="stagiaireForm.get('nom')?.hasError('required') && stagiaireForm.get('nom')?.touched">
+          Nom requis
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Téléphone:</label>
+        <input type="tel" formControlName="telephone" class="form-control">
+        <div class="error-message" *ngIf="stagiaireForm.get('telephone')?.invalid && stagiaireForm.get('telephone')?.touched">
+          Format invalide (0-9 chiffres)
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Département:</label>
+        <input type="text" formControlName="departement" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>École:</label>
+        <input type="text" formControlName="ecole" class="form-control">
+      </div>
+
+      <div class="button-group">
+        <button type="submit" class="btn btn-primary">{{ isEditing ? 'Modifier' : 'Ajouter' }}</button>
+        <button type="button" class="btn btn-secondary" (click)="resetForm()">Annuler</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-section">
+    <h2>Liste des Stagiaires</h2>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Téléphone</th>
+          <th>Département</th>
+          <th>École</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stagiaire of stagiaires">
+          <td>{{ stagiaire.nom }}</td>
+          <td>{{ stagiaire.telephone }}</td>
+          <td>{{ stagiaire.departement }}</td>
+          <td>{{ stagiaire.ecole }}</td>
+          <td>
+            <button class="btn btn-edit" (click)="editStagiaire(stagiaire)">Modifier</button>
+            <button class="btn btn-delete" (click)="deleteStagiaire(stagiaire.id!)">Supprimer</button>
+          </td>
+        </tr>
+        <tr *ngIf="stagiaires.length === 0">
+          <td colspan="5" class="no-data">Aucun stagiaire enregistré</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+.hero {
+    min-height: 100vh; 
+    background: url('../../assets/Travel2.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+  }
+  
+  .hero-content {
+    text-align: left; 
+    color: #fff; 
+    padding: 0 50px; 
+    max-width: 500px; 
+  }
+
+  
+  .hero-content h2  {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+    button {
+    padding: 15px 30px;
+    background-color: #fff;
+    border: none;
+    border-radius: 30px;
+    color: #000;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 7rem;
+  }
+  
+   button:hover {
+    background-color: #0099cc;
+  }
+
+ span {
+    margin-left: 20px; 
+    font-size: 16px;
+    text-align: center;  
+  }
+
+  
+
+  
+
+  
+  
+ 

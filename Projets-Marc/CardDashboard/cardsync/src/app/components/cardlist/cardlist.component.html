@@ -1,0 +1,9 @@
+<div class="card-list">
+    @for (card of cards; track card.id) {
+      <app-card-item 
+        [card]="card"
+        (onEdit)="editCard.emit($event)"
+        (onDelete)="deleteCard($event)"
+      />
+    }
+</div>

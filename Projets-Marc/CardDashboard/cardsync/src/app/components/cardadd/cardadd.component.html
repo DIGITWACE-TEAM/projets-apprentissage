@@ -1,0 +1,7 @@
+<form #cardForm="ngForm" (ngSubmit)="handleSubmit()">
+    <input type="text" [(ngModel)]="formData.title" name="title" required placeholder="Titre de la carte">
+    <input type="text" [(ngModel)]="formData.description" name="description" required placeholder="Description courte (max 20 caractères)" maxlength="20">
+    <textarea [(ngModel)]="formData.content" name="content" required placeholder="Contenu détaillé"></textarea>
+    <button type="button" class="btn-cancel" (click)="cancel()">Annuler</button>
+    <button type="submit">{{ isEditMode ? 'Modifier' : 'Créer' }}</button>
+</form>
